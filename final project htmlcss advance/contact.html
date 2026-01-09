@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | AstroSTD</title>
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .fade {
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+
+    #success-message {
+      opacity: 0;
+      transform: translateY(20px);
+      font-size: 3em; /* Big font size */
+      text-align: center;
+      color: green;
+      margin-top: 300px; /* Adjusted top margin */
+      margin-bottom: 300px; /* Adjusted bottom margin */
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    #success-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong>🚀 AstroSTD</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="careers.html">Careers</a>
+    <a href="solar-system.html">Solar System</a>
+  </div>
+</nav>
+
+<header>
+  <h1 class="fade">Contact AstroSTD</h1>
+</header>
+
+<section class="fade" id="contact-section">
+  <h2>Get in Touch</h2>
+  <p>
+    Whether you're a partner, researcher, or future employee,
+    we’d love to hear from you.
+  </p>
+
+  <form id="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<h1 id="success-message">Successfully sent the contact info ✅</h1>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>AstroSTD</h3>
+      <p>Innovating beyond Earth.</p>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <a href="services.html">Satellites</a>
+      <a href="services.html">Launch</a>
+    </div>
+    <div>
+      <h3>Social Media</h3>
+      <a href="https://www.youtube.com/@SpaceSFS123">YouTube</a>
+      <a href="https://www.facebook.com/shkolladigjitale.ferizaj/">FaceBook</a>
+      <a href="https://github.com/Rinor778">GitHub</a>
+    </div>
+  </div>
+
+  <p style="margin-top:40px; text-align:center;">
+    © 2026 AstroSTD. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const contactSection = document.getElementById('contact-section');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+
+    contactSection.classList.add('hidden');
+
+    setTimeout(() => {
+ 
+      contactSection.style.display = 'none';
+
+      successMessage.classList.add('show');
+    }, 800);
+  });
+</script>
+
+</body>
+</html>
